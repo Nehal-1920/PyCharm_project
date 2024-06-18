@@ -31,3 +31,18 @@ d={}
 print(type(d))
 d={"nehal":1,"rashi":2, "bhanu":3}
 print(d["nehal"])
+#ASCII
+name="NEHAL"
+for i in name:
+    print(ord(i))
+
+#3110. Score of a String
+
+def scoreOfString(self, s: str) -> int:
+    ans=0
+    for i in range(len(s)-1):
+        val1=ord(s[i])
+        val2=ord(s[i+1])
+        ans+=abs(val2-val1)
+    return ans
+
