@@ -46,3 +46,7 @@ def scoreOfString(self, s: str) -> int:
         ans+=abs(val2-val1)
     return ans
 
+#28. Find the Index of the First Occurrence in a String
+def strStr(self, haystack: str, needle: str) -> int:
+        return haystack.find(needle)
+
