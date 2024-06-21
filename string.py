@@ -50,3 +50,58 @@ def scoreOfString(self, s: str) -> int:
 def strStr(self, haystack: str, needle: str) -> int:
         return haystack.find(needle)
 
+#58. Length of Last Word
+def lengthOfLastWord(self, s: str) -> int:
+        s=s.strip()
+        # print("$",s,"$")
+        res = ' ' in s
+        if res==False:
+            return len(s)
+        #s.rindex gave error when there were no spaces in s
+        lastIndex =s.rindex(' ')
+        # print(lastIndex)
+        subs=s[lastIndex+1:]
+        # print(subs)
+        return len(subs)
+
+#125. Valid Palindrome
+def isPalindrome(self, s: str) -> bool:
+        s=s.lower()
+
+        st=""
+        for i in range(len(s)):
+            if s[i].isalnum():
+                st=st+s[i]
+        print(st)
+
+        for i in range(len(st)):
+            if st[i]!=st[len(st)-i-1]:
+                return False
+                
+        return True 
+#344. Reverse String
+def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        s[:] = s[::-1]
+
+#345. Reverse Vowels of a String
+def reverseVowels(self, s: str) -> str:
+        lowerVowels ="aeiou"
+        upperVowels ="AEIOU"
+        vowel =[]
+        for characters in s:
+            if characters in lowerVowels or characters in upperVowels:
+                vowel.append(characters)
+        ans = ""
+        vowel.reverse()
+        i=0
+        for characters in s:
+            if characters in lowerVowels or characters in upperVowels:
+                ans=ans+vowel[i]
+                i+=1
+            else:
+                ans=ans+characters
+        return ans
+
