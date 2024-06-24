@@ -104,4 +104,12 @@ def reverseVowels(self, s: str) -> str:
             else:
                 ans=ans+characters
         return ans
+# 1773. Count Items Matching a Rule
+ def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
+        ans=0
+        rule = {'type':0, 'color':1, 'name':2}
+        for i in items:
+            if i[rule[ruleKey]]==ruleValue:
+                ans+=1
+        return ans
 
